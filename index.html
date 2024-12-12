@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Share Count Calculator</title>
     <style>
-        *{
-            margin-left: 30px;
+        .juneClose {
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         #container{
             display: flex;
@@ -33,7 +36,9 @@
         }
         h3,h1{
             color: rgb(29, 79, 171);
+            margin: 0;
         }
+        h4 {margin: 0 auto 20px;}
         footer{
             margin-top: 50px;
         }
@@ -63,8 +68,8 @@
         <h4>আপনার শেয়ার সংখ্যা হিসাব করুন।</h4>
         <div id="container">
             <input id="nameJune" type="text" placeholder="আপনার নাম">
-            <input id="presentCountJune" type="number" placeholder="বর্তমান শেয়ার সংখ্যা">
-            <input id="increseCountJune" type="number" placeholder="যতটি শেয়ার বৃদ্ধি করতে চান">
+            <input id="presentCountJune" type="number" placeholder="বর্তমান শেয়ার সংখ্যা (ইংরেজিতে লিখুন)">
+            <input id="increseCountJune" type="number" placeholder="যতটি শেয়ার বৃদ্ধি করতে চান (ইংরেজিতে লিখুন)">
             <button id="calculateButtonJune">হিসাব করুন</button>
         </div>
 
@@ -144,17 +149,17 @@
 
             // Displaying the result in the HTML element
             const resultElementJune = document.getElementById("januaryJune");
-            resultElementJune.innerHTML = "=> জানুআরি মাসে " + januaryJune.toFixed(2) + " টাকা,";
+            resultElementJune.innerHTML = "=> জানুআরি মাসে " + januaryJune.toFixed(0) + " টাকা,";
             resultElementJune.style.display = "block";
 
             //February installment
-            document.getElementById("februaryJune").innerHTML = "=> ফেব্রুআরি মাসে " + januaryJune.toFixed(2) + " টাকা, ";
-            document.getElementById("marchJune").innerHTML = "=> মার্চ মাসে " + januaryJune.toFixed(2) + " টাকা, ";
+            document.getElementById("februaryJune").innerHTML = "=> ফেব্রুআরি মাসে " + januaryJune.toFixed(0) + " টাকা, ";
+            document.getElementById("marchJune").innerHTML = "=> মার্চ মাসে " + januaryJune.toFixed(0) + " টাকা, ";
             const aprilJune = 2 * (presentCountJune * 500) + ((increseCountJune * 500 * 16) / 6);
-            document.getElementById("aprilJune").innerHTML = "=> এপ্রিল মাসে " + aprilJune.toFixed(2) + " টাকা।"
+            document.getElementById("aprilJune").innerHTML = "=> এপ্রিল মাসে " + aprilJune.toFixed(0) + " টাকা।"
 
-            document.getElementById("mayJune").innerHTML = "=> মে মাসে " + januaryJune.toFixed(2) + " টাকা, ";
-            document.getElementById("juneJune").innerHTML = "=> জুন মাসে " + januaryJune.toFixed(2) + " টাকা, ";
+            document.getElementById("mayJune").innerHTML = "=> মে মাসে " + januaryJune.toFixed(0) + " টাকা, ";
+            document.getElementById("juneJune").innerHTML = "=> জুন মাসে " + januaryJune.toFixed(0) + " টাকা, ";
 
             const yearTotalJune = ((presentCountJune + increseCountJune) * 500 * 16 );
             document.getElementById("totalJune").innerHTML = "প্রিয় সদস্য, Prottasha Phase 1 শেষে আপনার মোট জমা হবে " + yearTotalJune + " টাকা।" ;
